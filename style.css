@@ -1,0 +1,145 @@
+:root {
+  --cube-size: 200px;
+  --z-translate: calc( var( --cube-size ) / 2 );
+
+  --tiles-length: 3;
+
+  --tile-width: calc( var( --cube-size ) / var( --tiles-length ) );
+  --tile-scale: calc( 1 / var( --tiles-length ) );
+}
+
+html, body {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  /* outline: 1px solid white; */
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  outline: 4px solid lightgray;
+  position: absolute;
+
+  /* backface-visibility: hidden; */
+
+  font-size: 4em;
+}
+
+/* 
+  Acts as the 3D scene for the cube.
+
+  Supported variables:
+  --perspective - Perspective of the scene, acts like FOV.
+  --rx - Rotation X for the whole scene.
+  --ry - Rotation Y for the whole scene.
+*/
+
+.scene {
+  position: relative;
+  transform-style: preserve-3d;
+
+  width: var( --cube-size );
+  height: var( --cube-size );
+
+  /* outline: 2px solid gray; */
+
+  transform: 
+    perspective( var( --perspective ) )
+    rotateX( var( --rx ) )
+    rotateY( var( --ry ) );
+}
+
+
+/* 
+  Culmination of a couple of rules and parameters to control 3D transform
+  because I really need to share the same transform origin and there's no
+  other way when i nest div's.
+
+  Supported variables:
+
+  --x - X position of the tile in a grid.
+  --y - Y position of the tile in a grid.
+
+  --rx - Rotation along the X axis.
+  --ry - Rotation along the Y axis.
+  --rz - Rotation along the Z axis.
+*/
+.tile3d {
+  position: absolute;
+
+
+  --xy-factor: calc( ( var(--tiles-length) - 1 ) / var(--tiles-length) );
+  --xy-shift: calc( ( var( --cube-size ) / 2 ) * var( --xy-factor ) );
+
+  transform:
+    rotateX( var( --rx ) )
+    rotateZ( var( --rz ) )
+    rotateY( var( --ry ) )
+
+    translate3d(
+      calc( var( --tile-width ) * var( --x ) - var( --xy-shift ) ),
+      calc( var( --tile-width ) * var( --y ) - var( --xy-shift ) ),
+      var( --z-translate )
+    )
+
+    scaleX( var( --tile-scale ) )    
+    scaleY( var( --tile-scale ) )
+;
+
+}
+
+/* tile3d Fallback definitions */
+.tile3d {
+  --x: 0;
+  --y: 0;
+
+  --rx: 0deg;
+  --ry: 0deg;
+  --rz: 0deg;
+}
+
+.transparent {
+  opacity: 0.2;
+}
+
+/* #region CSS Color Classes */
+.front {
+  background-color: green;
+}
+
+.right {
+  background-color: red;
+}
+
+.back {
+  background-color: blue;
+}
+
+.left {
+  background-color: orange;
+}
+
+.up {
+  background-color: white;
+}
+
+.down {
+  background-color: yellow;
+}
+/* #endregion */

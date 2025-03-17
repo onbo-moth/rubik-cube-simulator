@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.slim.min.js" defer></script>
+
+  <script src="js/dynamicRotation.js" defer></script>
+  <script src="js/array2d.js" defer></script>
+  <script src="js/tile3d.js" defer></script>
+  <script src="js/rubik.js" defer></script>
+  <script src="js/dom.js" defer></script>
+</head>
+
+<body>
+  <style id="dynamic"></style>
+
+  <div class="buttons">
+    <button id="frontClockwise">F</button>
+    <button id="rightClockwise">R</button>
+    <button id="backClockwise">B</button>
+    <button id="leftClockwise">L</button>
+    <button id="upClockwise">U</button>
+    <button id="downClockwise">D</button>
+
+    <button id="frontCounterclockwise">F'</button>
+    <button id="rightCounterclockwise">R'</button>
+    <button id="backCounterclockwise">B'</button>
+    <button id="leftCounterclockwise">L'</button>
+    <button id="upCounterclockwise">U'</button>
+    <button id="downCounterclockwise">D'</button>
+  </div>
+
+  <div class="container">
+    <div class="scene">
+      <!-- <div class="red tile tile3d"   style="--rx: 0; --ry: 0; --rz: 0"></div>
+      <div class="green tile tile3d" style="--rx: 90deg; --ry: 0; --rz: 0"></div>
+      <div class="blue tile tile3d"  style="--rx: 0; --ry: 90deg; --rz: 0"></div> -->
+
+      <!-- #region X rotated cube 
+      <div class="red tile tile3d transparent"   style="--rx: 30deg; --ry: 0; --rz: 0"></div>
+      <div class="red tile tile3d transparent" style="--rx: 120deg; --ry: 0; --rz: 0"></div>
+      <div class="red tile tile3d transparent"  style="--rx: 30deg; --ry: 90deg; --rz: 0"></div>
+      <div class="red tile tile3d transparent"   style="--rx: 30deg; --ry: 180deg; --rz: 0"></div>
+      <div class="red tile tile3d transparent" style="--rx: 120deg; --ry: 180deg; --rz: 0deg"></div>
+      <div class="red tile tile3d transparent"  style="--rx: 30deg; --ry: 270deg; --rz: 0"></div>
+           #endregion  
+
+           #region Y rotated cube 
+      <div class="green tile tile3d transparent"   style="--rx: 0; --ry: 30deg; --rz: 0"></div>
+      <div class="green tile tile3d transparent" style="--rx: 90deg; --ry: 0; --rz: -30deg"></div>
+      <div class="green tile tile3d transparent"  style="--rx: 0deg; --ry: 120deg; --rz: 0"></div>
+      <div class="green tile tile3d transparent"   style="--rx: 0; --ry: 210deg; --rz: 0"></div>
+      <div class="green tile tile3d transparent" style="--rx: 90deg; --ry: 180deg; --rz: -30deg"></div>
+      <div class="green tile tile3d transparent"  style="--rx: 0deg; --ry: 300deg; --rz: 0"></div>
+           #endregion  
+
+           #region Z rotated cube
+      <div class="blue tile tile3d transparent"   style="--rx: 0; --ry: 0; --rz: 30deg"></div>
+      <div class="blue tile tile3d transparent" style="--rx: 90deg; --ry: 30deg; --rz: 0"></div>
+      <div class="blue tile tile3d transparent"  style="--rx: 0deg; --ry: 90deg; --rz: 30deg"></div>
+      <div class="blue tile tile3d transparent"   style="--rx: 0; --ry: 180deg; --rz: 30deg"></div>
+      <div class="blue tile tile3d transparent" style="--rx: 90deg; --ry: 210deg; --rz: 0deg"></div>
+      <div class="blue tile tile3d transparent"  style="--rx: 0deg; --ry: 270deg; --rz: 30deg"></div>
+           #endregion  -->
+
+    </div>
+  </div>
+</body>
+
+</html>

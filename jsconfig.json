@@ -1,0 +1,12 @@
+//  this is used for vscode intellisense :P
+
+{
+  "compilerOptions": {
+    "target": "ES2019"
+  },
+  "typeAcquisition": {
+    "include": [
+      "jquery"
+    ]
+  }
+}
